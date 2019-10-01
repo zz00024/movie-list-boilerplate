@@ -26,11 +26,29 @@ table, th, tr {
   font-size: 13px;
 }
 
+.addMovieButton {
+  background-color: rgb(71, 184, 71);
+  color: white;
+}
+
+.buttonContainer {
+  flex-direction: column;
+}
+
 #myInput {
-  width:40%;
+  width:25%;
   height: 6%;
   background-color:white;
   margin-left:10%;
-  margin-top:5%;
+  margin-top:2%;
+  background-position: 10%, 10%;
+}
+
+#myMovie {
+  width:25%;
+  height: 6%;
+  background-color:white;
+  margin-left:10%;
+  margin-top:2%;
   background-position: 10%, 10%;
 }
