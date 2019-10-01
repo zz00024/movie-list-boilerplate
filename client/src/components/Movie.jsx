@@ -1,7 +1,11 @@
 import React from 'react';
 
 const Movie = (props) => (
-  <div>Hello World!</div>
+  <tbody>
+    <tr className = 'tr'>
+      <th>{props.movieName}</th>
+    </tr>
+  </tbody>
 );
 
 export default Movie;
