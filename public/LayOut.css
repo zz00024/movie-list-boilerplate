@@ -1,0 +1,36 @@
+.header {
+  border: 2px grey;
+  background-color:whitesmoke;
+  height: 10%;
+  text-align: left;
+  font-size: 150%;
+}
+
+.table {
+  background-color: white;
+  border-collapse: collapse;
+  width: 60%;
+  /* margin-right: 10%; */
+}
+
+table, th, tr {
+  border: 2px solid grey;
+  padding: 20px;
+  margin-left: 10%;
+  /* margin-right: 30%; */
+  margin-top: 2.5%;
+  text-align: left;
+}
+
+.button {
+  font-size: 20px;
+}
+
+#myInput {
+  width:40%;
+  height: 6%;
+  background-color:white;
+  margin-left:10%;
+  margin-top:5%;
+  background-position: 10%, 10%;
+}
