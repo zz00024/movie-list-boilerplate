@@ -16,46 +16,35 @@ class App extends React.Component {
       ],
       addBarText: '',
       searchBar: '',
-      newArray: ''
+      newObject: ''
     };
-    this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.addMovieButton = this.addMovieButton.bind(this);
     this.filterMovies = this.filterMovies.bind(this);
+    this.addMovie = this.addMovie.bind(this);
   }
 
-  handleClick() {
-    console.log('clicked');
-  }
 
   addMovieButton(event) {
-    console.log('hello');
-    console.log(this.state['movies']);
-    var movieArray = this.state['movies'];
-    // console.log('add movie clicked');
-    // console.log(movieArray);
-    //add user input movie into the table and display it
-    var userInput;
-    //userInput is what we are going to add
-    userInput = event.target.value;
-    console.log(event.value);
-    //add userInput into the this.state.movies array object
-    this.setState((state)=>{
-      movieArray.push({'title': userInput});
-    });
-    // console.log(this.state['movies']);
+    event.preventDefault();
+    var postAdd = this.state.movies.concat({'title': this.state.addBarText});
+    console.log(postAdd);
+    this.setState({movies: postAdd});
+    // ({movies: [this.state.movies, {'title': this.state.addBarText}]}))
+    // this.setState(preState => { movies: [preState.movies, {'title': this.state.addBarText}]} );
 
-  }
+  };
 
   //Filter the display table by the user input
   handleChange(event) {
     this.setState({searchBar: event.target.value});
   }
-
+  addMovie(event) {
+    this.setState({'addBarText': event.target.value});
+  }
   filterMovies() {
     var newArray = this.state.movies.filter(movie => movie['title'].toLowerCase().includes(this.state.searchBar));
-    console.log(newArray);
     return newArray;
   }
 
@@ -69,12 +58,12 @@ class App extends React.Component {
       <div>
         <h1>Movie List</h1>
 
-{/*
-        <form onSubmit={this.handleSubmit}>
-        <input type="text" id="myMovie" className = 'addMovie'  placeholder="Add movie title here..." value={this.state.addBarText}></input>
+        <form onSubmit = {this.handleSubmit}>
+        <label>
+          <input type = "text" placeholder = "Add movie title here..." onChange = {this.addMovie} value = {this.state.addBarText}/>
+        </label>
+          <input type = "submit" value = "Add" className = "addMovieButton" onClick = {this.addMovieButton}/>
         </form>
-        <button className = 'addMovieButton' onClick = {this.addMovieButton}>Add</button> */}
-
 
         <div className = 'searchMovie'>
         <form onSubmit = {this.handleSubmit}>
