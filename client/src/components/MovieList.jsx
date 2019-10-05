@@ -6,7 +6,7 @@ const MovieList = (props) => (
     {props.movies.map((movie, idx) => (
       <Movie
           movieName = {movie.title}
-          key = {movie.movieName + idx.toString()}
+          key = {movie.title + idx.toString()}
       />
     ))}
   </table>
